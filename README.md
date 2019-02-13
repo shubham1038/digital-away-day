@@ -1,13 +1,13 @@
-# Deloitte Digital Away Day
+# Digital Away Day
 
-Deloitte Away Day is a maven project to generate a day program to accommodate a list of activities.
+Deloitte Away Day is a maven project to generate a day program to arrange a list of activities.
 
 ### Author
 Shubham Agarwal (shubham.agarwal7076@gmail.com)
 
 ### Tech
 
-Deloitte Away Day uses the following technologies:
+Program uses the following technologies:
 
 * [Java] - Code base language (version 1.8)
 * [Spring] - For Dependency Injection (version 4.0)
@@ -17,7 +17,7 @@ Deloitte Away Day uses the following technologies:
 
 ### Installation
 
-Deloitte Away Day generates a day program based in an input file stored in the directory `src\main\resources\input.txt`.
+Deloitte digital Away Day generates a day program based in an input file stored in the directory `src\main\resources\input.txt`.
 
 These are the allowed formats for tasks:
 
@@ -53,7 +53,8 @@ Indiano Drizzle 45min
 
 Deloitte Away Day requires [Maven](https://maven.apache.org/) v3+ and [Java] v1.8+ to run.
 
-Open a terminal and execute these commands to compile and execute:
+Please set JAVA_HOME and M2_HOME in environment variable then 
+Open a terminal (CMD) and go to project location before executing below commands to compile and execute:
 
 ```sh
 $ mvn clean install
@@ -98,7 +99,7 @@ INFO: Closing org.springframework.context.annotation.AnnotationConfigApplication
 
 ### Design
 
-These are the main classes used in this project:
+These are the main classes used in digital awayday project:
 
 | *com.digital.awayday.service* |
 | ------------ | 
