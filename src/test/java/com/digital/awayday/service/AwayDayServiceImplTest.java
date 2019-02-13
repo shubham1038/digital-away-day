@@ -22,7 +22,6 @@ public class AwayDayServiceImplTest {
 	@Test
 	public void distributionTasks() throws AwayDayException {
 		
-		//AwayDayService awayDayService = new AwayDayServiceImpl();
 		TaskDistributionService taskDistService = awayDayService.createActivities();
 		assertNotNull(taskDistService);
 	}

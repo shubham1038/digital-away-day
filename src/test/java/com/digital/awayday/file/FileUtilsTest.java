@@ -6,7 +6,6 @@ import com.digital.awayday.exception.AwayDayException;
 import com.digital.awayday.file.FileUtils;
 
 public class FileUtilsTest {
-	
 
 	@Test
 	public void loadTasks_ok() throws AwayDayException {
