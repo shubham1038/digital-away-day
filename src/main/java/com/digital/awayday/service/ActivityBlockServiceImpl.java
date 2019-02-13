@@ -4,35 +4,23 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import com.digital.awayday.model.Task;
+import com.digital.awayday.service.ActivityBlockService;
 
 /**
  * Class for a group of tasks with a delimited size
  * @author Shubham Agarwal
  *
  */
-@Service
 public class ActivityBlockServiceImpl implements ActivityBlockService{
 
 	private List<Task> tasks;
 
 	private Integer size;
 
-	public ActivityBlockServiceImpl() {
-	}
-	
 	public ActivityBlockServiceImpl(Integer size) {
 		this.tasks = new ArrayList<>();
 		this.size = size;
-	}
-	
-	@Override
-	public ActivityBlockService activityBlockSetup(Integer size) {
-		this.tasks = new ArrayList<>();
-		this.size = size;
-		return this;
 	}
 	
 	/**

@@ -5,7 +5,6 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
@@ -17,13 +16,10 @@ import com.digital.awayday.model.Task;
 @ContextConfiguration(classes = AppClient.class, loader = AnnotationConfigContextLoader.class)
 public class ActivityBlockServiceImplTest {
 
-	@Autowired
-	ActivityBlockService activityBlockService;
-	
 	@Test
 	public void addTask_ok() {
 		// Given
-		ActivityBlockService block = activityBlockService.activityBlockSetup(60);
+		ActivityBlockService block = new ActivityBlockServiceImpl(60);
 		Task task = new Task("test", 60);
 		// when
 		boolean result = block.addTask(task, true);
@@ -34,7 +30,7 @@ public class ActivityBlockServiceImplTest {
 	@Test
 	public void addTask_overSize() {
 		// Given
-		ActivityBlockService block = activityBlockService.activityBlockSetup(30);
+		ActivityBlockService block = new ActivityBlockServiceImpl(30);
 		Task task = new Task("test", 60);
 		// when
 		boolean result = block.addTask(task, true);
@@ -45,7 +41,7 @@ public class ActivityBlockServiceImplTest {
 	@Test
 	public void addTask_nullTask() {
 		// Given
-		ActivityBlockService block = activityBlockService.activityBlockSetup(30);
+		ActivityBlockService block = new ActivityBlockServiceImpl(30);
 		// when
 		boolean result = block.addTask(null, true);
 		// Then
@@ -55,7 +51,7 @@ public class ActivityBlockServiceImplTest {
 	@Test
 	public void getAvailableSize_empy() {
 		// Given
-		ActivityBlockService block = activityBlockService.activityBlockSetup(30);
+		ActivityBlockService block = new ActivityBlockServiceImpl(30);
 		// when
 		Integer result = block.getAvailableSize();
 		// Then
@@ -65,7 +61,7 @@ public class ActivityBlockServiceImplTest {
 	@Test
 	public void getAvailableSize_half() {
 		// Given
-		ActivityBlockService block = activityBlockService.activityBlockSetup(30);
+		ActivityBlockService block = new ActivityBlockServiceImpl(30);
 		block.addTask(new Task("test", 20), true);
 		// when
 		Integer result = block.getAvailableSize();
@@ -76,7 +72,7 @@ public class ActivityBlockServiceImplTest {
 	@Test
 	public void getAvailableSize_full() {
 		// Given
-		ActivityBlockService block = activityBlockService.activityBlockSetup(30);
+		ActivityBlockService block = new ActivityBlockServiceImpl(30);
 		block.addTask(new Task("test", 30), true);
 		// when
 		Integer result = block.getAvailableSize();
@@ -88,7 +84,7 @@ public class ActivityBlockServiceImplTest {
 	@Test
 	public void getUsedSize_empy() {
 		// Given
-		ActivityBlockService block = activityBlockService.activityBlockSetup(30);
+		ActivityBlockService block = new ActivityBlockServiceImpl(30);
 		// when
 		Integer result = block.getUsedSize();
 		// Then
@@ -98,7 +94,7 @@ public class ActivityBlockServiceImplTest {
 	@Test
 	public void getUsedSize_half() {
 		// Given
-		ActivityBlockService block = activityBlockService.activityBlockSetup(30);
+		ActivityBlockService block = new ActivityBlockServiceImpl(30);
 		block.addTask(new Task("test", 20), true);
 		// when
 		Integer result = block.getUsedSize();
@@ -109,7 +105,7 @@ public class ActivityBlockServiceImplTest {
 	@Test
 	public void getUsedSize_full() {
 		// Given
-		ActivityBlockService block = activityBlockService.activityBlockSetup(30);
+		ActivityBlockService block = new ActivityBlockServiceImpl(30);
 		block.addTask(new Task("test", 30), true);
 		// when
 		Integer result = block.getUsedSize();

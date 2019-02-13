@@ -62,37 +62,37 @@ $ mvn exec:java
 
 Output will be shown in the terminal. Find bellow an output example:
 
-Feb 13, 2019 12:34:19 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
-INFO: Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4783da3f: startup date [Wed Feb 13 12:34:19 IST 2019]; root of context hierarchy
+Feb 13, 2019 2:33:26 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4783da3f: startup date [Wed Feb 13 14:33:26 IST 2019]; root of context hierarchy
 Deloitte Digital Away Day:
 Team 1:
 09:00 am : Duck Herding 60min
 10:00 am : Archery 45min
 10:45 am : Learning Magic Tricks 45min
 11:30 am : Human Table Football 30min
-13:00 pm : Laser Clay Shooting 60min
-14:00 pm : Buggy Driving 30min
-14:30 pm : Salsa & Pickles sprint
-14:45 pm : 2-wheeled Segways 45min
-15:30 pm : Giant Puzzle Dinosaurs 30min
+13:00 pm : Viking Axe Throwing 60min
+14:00 pm : Giant Digital Graffiti 60min
+15:00 pm : Cricket 2020 60min
 16:00 pm : Staff Motivation Presentation 60min
 
 Team 2:
-09:00 am : Duck Herding 60min
-10:00 am : Archery 45min
-10:45 am : Learning Magic Tricks 45min
-11:30 am : Human Table Football 30min
-13:00 pm : Laser Clay Shooting 60min
-14:00 pm : Buggy Driving 30min
-14:30 pm : Salsa & Pickles sprint
-14:45 pm : 2-wheeled Segways 45min
-15:30 pm : Giant Puzzle Dinosaurs 30min
+09:00 am : Laser Clay Shooting 60min
+10:00 am : Buggy Driving 30min
+10:30 am : Salsa & Pickles sprint
+10:45 am : 2-wheeled Segways 45min
+11:30 am : Giant Puzzle Dinosaurs 30min
+13:00 pm : Wine Tasting sprint
+13:15 pm : Arduino Bonanza 30min
+13:45 pm : Digital Tresure Hunt 60min
+14:45 pm : Enigma Challenge 45min
+15:30 pm : New Zealand Haka 30min
 16:00 pm : Staff Motivation Presentation 60min
 
 
 
-Feb 13, 2019 12:34:20 PM org.springframework.context.support.AbstractApplicationContext doClose
-INFO: Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@4783da3f: startup date [Wed Feb 13 12:34:19 IST 2019]; root of context hierarchy
+Feb 13, 2019 2:33:26 PM org.springframework.context.support.AbstractApplicationContext doClose
+INFO: Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@4783da3f: startup date [Wed Feb 13 14:33:26 IST 2019]; root of context hierarchy
+
 
 
 
@@ -124,4 +124,3 @@ These are the main classes used in this project:
 | *com.digital.awayday.exception* |
 | ------------ | 
 | AwayDayException: *Returned exception when a functional or execution error occurs*  |
-"# digital-away-day" 

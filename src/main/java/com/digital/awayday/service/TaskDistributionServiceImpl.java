@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.digital.awayday.exception.AwayDayException;
@@ -14,9 +13,6 @@ import com.digital.awayday.model.Task;
 @Service
 public class TaskDistributionServiceImpl implements TaskDistributionService{
 
-	@Autowired
-	DayProgramService dayProgramService;
-	
 	List<DayProgramService> programs = new ArrayList<>();
 	
 	/**
@@ -27,7 +23,7 @@ public class TaskDistributionServiceImpl implements TaskDistributionService{
 			Integer eveningExtraTime, List<Task> tasks) throws AwayDayException {
 
 		for (int i = 0; i < numberOfTeams(tasks); i++) {
-			programs.add(dayProgramService.initialize(morningStart, morningEnd, eveningStart, eveningEnd, eveningExtraTime));
+			programs.add(new DayProgramServiceImpl(morningStart, morningEnd, eveningStart, eveningEnd, eveningExtraTime));
 		}
 		return this;
 	}

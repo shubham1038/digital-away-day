@@ -1,8 +1,5 @@
 package com.digital.awayday.service;
 
-import java.time.LocalTime;
-
-import com.digital.awayday.exception.AwayDayException;
 import com.digital.awayday.model.Task;
 
 public interface DayProgramService {
@@ -32,18 +29,5 @@ public interface DayProgramService {
 	 * @return Integer
 	 */ 
 	public Integer getMaxDuration();
-	
-	/**
-	 * Method to initialize activity start and end time with extra time for evening slot
-	 * @param morningStart
-	 * @param morningEnd
-	 * @param eveningStart
-	 * @param eveningEnd
-	 * @param eveningExtraTime
-	 * @return DayProgramService
-	 * @throws AwayDayException
-	 */
-	public DayProgramService initialize(LocalTime morningStart, LocalTime morningEnd, LocalTime eveningStart, LocalTime eveningEnd,
-			Integer eveningExtraTime) throws AwayDayException;
 	
 }

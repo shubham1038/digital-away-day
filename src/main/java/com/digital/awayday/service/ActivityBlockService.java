@@ -24,11 +24,4 @@ public interface ActivityBlockService {
 	 */
 	public Integer getUsedSize();
 	
-	/**
-	 * Method is used to initialize slot size
-	 * @param size
-	 * @return ActivityBlockService
-	 */
-	public ActivityBlockService activityBlockSetup(Integer size);
-	
 }

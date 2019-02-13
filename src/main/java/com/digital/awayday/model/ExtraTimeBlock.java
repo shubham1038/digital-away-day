@@ -11,7 +11,6 @@ public class ExtraTimeBlock extends ActivityBlockServiceImpl {
 
 	private Integer extraTime;
 
-
 	public ExtraTimeBlock(Integer size, Integer extraTime) {
 		super(size);
 		this.extraTime = extraTime;

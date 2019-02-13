@@ -3,10 +3,6 @@ package com.digital.awayday.service;
 import java.time.Duration;
 import java.time.LocalTime;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Service;
-
 import com.digital.awayday.exception.AwayDayException;
 import com.digital.awayday.model.ExtraTimeBlock;
 import com.digital.awayday.model.Task;
@@ -16,8 +12,6 @@ import com.digital.awayday.model.Task;
  * @author Shubham Agarwal
  *
  */
-@Service
-@Scope("prototype")
 public class DayProgramServiceImpl implements DayProgramService{
 
 	private LocalTime morningStart;
@@ -26,21 +20,15 @@ public class DayProgramServiceImpl implements DayProgramService{
 	private LocalTime eveningStart;
 	private ExtraTimeBlock evening;
 	
-	@Autowired
-	ActivityBlockService activityBlockService;
-	
-	@Override
-	public DayProgramService initialize(LocalTime morningStart, LocalTime morningEnd, LocalTime eveningStart, LocalTime eveningEnd,
+	public DayProgramServiceImpl(LocalTime morningStart, LocalTime morningEnd, LocalTime eveningStart, LocalTime eveningEnd,
 			Integer eveningExtraTime) throws AwayDayException {
 
 		this.checkDayProgram(morningStart, morningEnd, eveningStart, eveningEnd);
 
 		this.morningStart = morningStart;
-		this.morning = activityBlockService.activityBlockSetup(getBlockSize(morningStart, morningEnd));
+		this.morning = new ActivityBlockServiceImpl(getBlockSize(morningStart, morningEnd));
 		this.eveningStart = eveningStart;
 		this.evening = new ExtraTimeBlock(getBlockSize(eveningStart, eveningEnd), eveningExtraTime);
-		
-		return this;
 	}
 	
 	/**
